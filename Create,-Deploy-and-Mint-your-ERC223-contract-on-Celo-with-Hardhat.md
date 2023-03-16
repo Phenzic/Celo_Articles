@@ -1,3 +1,17 @@
+---
+title: Create Deploy and Mint your ERC223 contract on Celo with Hardhat
+description: This tutorial is an expository piece on the ERC223 token standard, also explaining how to create and deploy a sample ERC223 contract 
+authors:
+  - name: Mayowa Julius Ogungbola
+    title: Software Engineer, Technical writer @Celo Foundation
+    url: https://github.com/Julius170
+    image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
+tags: [solidity, hardhat, smartcontract, intermediate, celo, celosage]
+hide_table_of_contents: true
+slug: /tutorials/create-deploy-and-mint-your-eRC223-contract-on-celo-with-hardhat
+---
+
+![ERC223-token-contract](https://user-images.githubusercontent.com/69092079/225619279-62950fe2-6aca-4f1c-ae57-31ad270ec809.png)
 
 ## Introduction​
 In the current state of web3 and its approach to decentralization, NFTs are now to the technical and non-technical web3 enthusiasts community. Understanding the different types of NFTs available and when they can use them would be a much more innovative way to implement these tokens in the real world.
