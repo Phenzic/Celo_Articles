@@ -41,6 +41,9 @@ ERC223 solves this problem by including a fallback function in the smart contrac
 According to the ERC223 token standard contract creators, the basic motivation behind creating the contract was the massive amount of ERC20 tokens being lost on transactions when being transferred to an unintended or unsupported token contract. You can visit the [link](https://github.com/Dexaran/ERC223-token-standard) for more information about the contract specifications.
 
 
+![motivation](https://user-images.githubusercontent.com/69092079/225621959-df5ae0e9-cf45-4c44-adad-da04fb43bed6.png)
+
+
 ## Using the ERC223 Token Standard
 
 1. Contract-Based Trading: ERC223 tokens can be used to facilitate contract-based trading. This allows users to create contracts with conditions that must be met for the trade to be completed. This helps ensure that both parties are satisfied with the terms of the trade. 
@@ -49,11 +52,12 @@ According to the ERC223 token standard contract creators, the basic motivation b
 
 3. Non-Fungible Tokens: Non-fungible tokens (NFTs) are unique tokens that can’t be interchanged. They represent digital assets such as art, music, and game items. ERC223 tokens can be used to facilitate the creation and trading of NFTs on the Ethereum blockchain. 	
 
-4. Decentralized Exchanges: ERC223 tokens can be used to facilitate decentralized exchanges. These exchanges allow users to buy and sell digital assets without the need for a third party. This provides users with more control over their funds and can help reduce transaction costs. 
+4. Decentralized Exchanges: ERC223 tokens can be used to facilitate decentralized exchanges. These exchanges allow users to buy and sell digital assets without the need for a third party. This
+5.  provides users with more control over their funds and can help reduce transaction costs. 
 
 5. Payment Systems: ERC223 tokens can be used to facilitate payment systems. This allows users to send and receive payments using digital assets on the Ethereum blockchain. This can be used to facilitate payments between individuals, companies, and organizations.
 
-6. Loyalty Token: The company can issue the ERC223 token to reward loyal customers providing them with incentives such as discounts, cashback, or other rewards.
+6. Loyalty Token: The company can issue the ERC223 token to reward loyal customers by providing them with incentives such as discounts, cashback, or other rewards.
 
 7. Gaming Token: The gaming platform would use the ERC223 token as in-game currency, allowing players to earn rewards and trade items on the blockchain.
 
@@ -128,6 +132,8 @@ module.exports = {
   solidity: "0.8.10",
 };
 ```
+
+
 Now that you have successfully installed and set up your hardhat development environment. Next, you can get started with creating your ERC233 smart contract.
 
 
@@ -137,7 +143,7 @@ The ERC223 token is more or less like the popular ERC20 token, with an upgrade. 
 
 Using a verified and audited ERC223 sample from Openzeppelin, the following function defines the implementation of the ERC223 token standard;
 
-1. Head over to the contract directory to copy and paste the code below into your contract file `MyToken.sol`.
+- Head over to the contract directory to copy and paste the code below into your contract file `MyToken.sol`.
 
 ```solidity
 // SPDX License-Identifier: MIT
@@ -320,7 +326,8 @@ contract MyToken is IERC223 {
 ```
 
 
-First, the contract defines an interface called "IERC223" which includes the standard functions that an ERC223 token should implement, such as `name`, `symbol`, `total supply`, `balance of`, and `transfer`.
+- First, the contract defines an interface called "IERC223" which includes the standard functions that an ERC223 token should implement, such as `name`, `symbol`, `total supply`, `balance of`, and `transfer`.
+
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -339,7 +346,7 @@ abstract contract IERC223 {
 }
 ```
 
-After that, the contract defines an abstract contract called "IERC223Recipient". This contract includes a struct called "ERC223TransferInfo" that contains information about the token transfer, such as the token contract address, the sender address, the value, and any data that is sent along with the transfer. The contract also includes a function called "tokenReceived" which is a hook that is called when a contract receives a transfer of ERC223 tokens. This function is responsible for processing the data that is sent along with the tokens.
+- After that, the contract defines an abstract contract called "IERC223Recipient". This contract includes a struct called "ERC223TransferInfo" that contains information about the token transfer, such as the token contract address, the sender address, the value, and any data that is sent along with the transfer. The contract also includes a function called "tokenReceived" which is a hook that is called when a contract receives a transfer of ERC223 tokens. This function is responsible for processing the data that is sent along with the tokens.
 
 
 ```solidity
@@ -361,7 +368,7 @@ abstract contract IERC223Recipient {
 ```
 
 
-The contract also includes a library called `Address`, which includes two functions. The first function called `isContract`, checks whether a given address is a contract or not. This function uses the `extcodesize`, assembly instruction to check whether the address has bytecode or not. If the size of the bytecode is greater than zero, the address is considered to be a contract. The second function called `toPayable`, is used to convert a given address to a payable address. This function is used when transferring tokens to a contract address.
+- The contract also includes a library called `Address`, which includes two functions. The first function called `isContract`, checks whether a given address is a contract or not. This function uses the `extcodesize`, assembly instruction to check whether the address has bytecode or not. If the size of the bytecode is greater than zero, the address is considered to be a contract. The second function called `toPayable`, is used to convert a given address to a payable address. This function is used when transferring tokens to a contract address.
 
 
 ```solidity
@@ -380,10 +387,11 @@ library Address {
 ```
 
 
-Finally, the contract `MyToken` implements the IERC223 interface and defines its specific details, such as the token `name`, `symbol`, `decimal`, and total supply. It also includes two transfer functions. The first is with data, and the other is without data, which handles the transfer of tokens and any accompanying data.
+- Finally, the contract `MyToken` implements the IERC223 interface and defines its specific details, such as the token `name`, `symbol`, `decimal`, and total supply. It also includes two transfer functions. The first is with data, and the other is without data, which handles the transfer of tokens and any accompanying data.
 
-If the destination address is a contract, it calls the `tokenReceived`, function of the recipient contract and passes along the token transfer information. The contract also updates the balance of the sender and recipient and emits the `Transfer` and `TransferData` events. 
-Overall, the ERC223 token standard allows for the transfer of tokens along with any accompanying data. The use of an abstract contract and library provides modularity and reusability in the code.
+- If the destination address is a contract, it calls the `tokenReceived`, function of the recipient contract and passes along the token transfer information. The contract also updates the balance of the sender and recipient and emits the `Transfer` and `TransferData` events. 
+
+- Overall, the ERC223 token standard allows for the transfer of tokens along with any accompanying data. The use of an abstract contract and library provides modularity and reusability in the code.
 
 
 
@@ -432,10 +440,12 @@ runMain();
 
 5. Next, run the command `npx hardhat compile`, and your contract should be compiled without any error, with the result like the image below:
 
+![compiled](https://user-images.githubusercontent.com/69092079/225623148-edd9e69f-0ffb-4b08-874c-738b0f543ce3.jpg)
 
 
 6. Finally, run the command npx hardhat `$ npx hardhat run scripts/deploy.js --network alfajores`, and successful execution of the command should look like the image below:
 
+![deployed](https://user-images.githubusercontent.com/69092079/225623246-208979a5-9fde-44c5-86b3-769af4cc3611.png)
 
 
 ## Conclusion​
